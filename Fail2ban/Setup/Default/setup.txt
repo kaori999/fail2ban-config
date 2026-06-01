@@ -13,11 +13,11 @@ cd /etc/fail2ban
 sudo nano jail.local
 ^ config:
   [DEFAULT]
-  bantime = [time]h // default 1 h
+  bantime = [time]h
   maxretry = 3
-  findtime = [time]m // default 10 m
-  banaction = ufw / nftables-multiport / other // tergantung kamu pakai yang mana buat layanan firewall
-  ignoreip = [loopback]/8 ::1 [ip network lokal]/24 // tergantung access ip yang di izinkan
+  findtime = [time]m
+  banaction = ufw / nftables-multiport / other // It depends on which one you use for firewall services.
+  ignoreip = [loopback]/8 ::1 [local network ip]/24 // depending on the permitted IP access
   backend = systemd
 
 cat jail.local
