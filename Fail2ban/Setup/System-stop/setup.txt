@@ -3,9 +3,9 @@ terminal : bash
 ps aux | grep fail2ban
 
 // used if attach to systemd "system-path"
-sudo systemctl stop fail2ban // tambahkan perintah "2>/dev/null" if you want purge mode
+sudo systemctl stop fail2ban // add command "2>/dev/null" if you want purge mode
 sudo systemctl reset-failed fail2ban
-sudo systemctl disable fail2ban // tambahkan perintah "2>/dev/null" if you want purge mode
+sudo systemctl disable fail2ban // add command "2>/dev/null" if you want purge mode
 
 // the first forced method is "not recommended"
 sudo kill [id] 
