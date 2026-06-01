@@ -8,7 +8,7 @@ sudo rm -f /etc/fail2ban/*.local
 
 sudo rm -f /var/lib/fail2ban/fail2ban.sqlite3
 
-// purge reset "diperlukan jika mau reset total"
+// purge reset "required if you want a total reset"
 sudo apt purge fail2ban
 
 sudo apt autoremove
