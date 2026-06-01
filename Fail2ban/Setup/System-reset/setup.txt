@@ -1,0 +1,22 @@
+fail2ban config setup :
+terminal : bash
+// default reset
+sudo fail2ban-client unban --all
+
+sudo rm -f /etc/fail2ban/jail.local
+sudo rm -f /etc/fail2ban/*.local
+
+sudo rm -f /var/lib/fail2ban/fail2ban.sqlite3
+
+// purge reset "diperlukan jika mau reset total"
+sudo apt purge fail2ban
+
+sudo apt autoremove
+
+sudo rm -rf /etc/fail2ban
+
+sudo rm -rf /var/lib/fail2ban
+
+sudo rm -rf /var/log/fail2ban.log
+
+

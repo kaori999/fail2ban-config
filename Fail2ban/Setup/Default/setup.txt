@@ -1,0 +1,30 @@
+fail2ban installation setup :
+terminal : bash
+sudo apt update
+sudo apt install fail2ban
+
+fail2ban config setup :
+terminal : bash
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+
+cd /etc/fail2ban
+
+sudo nano jail.local
+^ config:
+  [DEFAULT]
+  bantime = [time]h // default 1 h
+  maxretry = 3
+  findtime = [time]m // default 10 m
+  banaction = ufw / nftables-multiport / other // tergantung kamu pakai yang mana buat layanan firewall
+  ignoreip = [loopback]/8 ::1 [ip network lokal]/24 // tergantung access ip yang di izinkan
+  backend = systemd
+
+cat jail.local
+
+sudo systemctl restart fail2ban
+sudo systemctl status fail2ban
+
+sudo journalctl -u fail2ban -f
+
+sudo tail -f /var/log/fail2ban.log

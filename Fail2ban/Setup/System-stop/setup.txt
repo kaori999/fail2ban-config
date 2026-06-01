@@ -1,0 +1,14 @@
+fail2ban config setup :
+terminal : bash
+ps aux | grep fail2ban
+
+// digunakan jika attach ke systemd "system-path"
+sudo systemctl stop fail2ban // tambahkan perintah "2>/dev/null" jika ingin mode purge
+sudo systemctl reset-failed fail2ban
+sudo systemctl disable fail2ban // tambahkan perintah "2>/dev/null" jika ingin mode purge
+
+sudo kill [id] // cara paksa pertama "tidak disarankan"
+sudo kill -9 [id]
+
+sudo pkill -f [system] // cara paksa jika program tetap berjalan "tidak disarankan"
+sudo pkill -9 [system]
