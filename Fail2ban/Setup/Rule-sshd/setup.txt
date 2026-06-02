@@ -1,4 +1,4 @@
-fail2ban setup config :
+fail2ban config setup :
 terminal : bash
 cd /etc/fail2ban
 
