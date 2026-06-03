@@ -7,10 +7,10 @@ sudo systemctl stop fail2ban // add command "2>/dev/null" if you want purge mode
 sudo systemctl reset-failed fail2ban
 sudo systemctl disable fail2ban // add command "2>/dev/null" if you want purge mode
 
-// the first forced method is "not recommended"
+// system built-in stop command
 sudo kill [id] 
 sudo kill -9 [id]
 
-// Forced method if the program continues to run "not recommended"
+// system built-in stop command
 sudo pkill -f [system] 
 sudo pkill -9 [system]
